@@ -7,7 +7,7 @@
 
 ## Installation
 
-`voxnet` is based on [Theano](http://deeplearning.net/software/theano/) 
+`voxnet` is based on [Theano](http://deeplearning.net/software/theano/)
 and [Lasagne](http://deeplearning.net/software/theano/).
 
 You will also need [path.py](https://github.com/jaraco/path.py) and
@@ -18,20 +18,20 @@ You can do something like
 ```sh
 git clone git@github.com:dimatura/voxnet.git
 cd voxnet
-pip install --editable .
+pip2 install -r requirements.txt --editable .
 ```
 
 
 ## ModelNet10 Example
 
-### Get data 
+### Get data
 
-In this example we will use the ModelNet 10 dataset, 
+In this example we will use the ModelNet 10 dataset,
 from the excellent [3D ShapeNet](http://3dshapenets.cs.princeton.edu/) project.
 
 To make our life easier we will use the voxelized version, which
 is included in the source code distribution. Unfortunately,
-it comes in evil `.mat` files, so we will convert them to a 
+it comes in evil `.mat` files, so we will convert them to a
 more python-friendly data format first.
 
 `scripts/download_shapenet10.sh` will try to download and convert the data
@@ -39,7 +39,7 @@ for you. This may take a while.
 
 ```sh
 # scripts/download_shapenet10.sh
-wget http://3dshapenets.cs.princeton.edu/3DShapeNetsCode.zip 
+wget http://3dshapenets.cs.princeton.edu/3DShapeNetsCode.zip
 unzip 3DShapeNetsCode
 python convert_shapenet10.py 3DShapeNets
 ```
@@ -81,16 +81,16 @@ python test.py config/shapenet10.py shapenet10_test.tar --out-fname out.npz
 
 `test.py` uses the same model as `train.py`, but only
 for classifying instances from the test set. It performs
-simple evaluation and optionally saves the predictions in an 
+simple evaluation and optionally saves the predictions in an
 `.npz` file.
 
 If you don't want to train your own, you can use the
 `--weights` option with the
-an example result of running this script, 
+an example result of running this script,
 `shapenet10_weights.npz`. This file was committed with
 [Git LFS](https://git-lfs.github.com/), so you
-can use that, or simply download the raw version 
-from github. 
+can use that, or simply download the raw version
+from github.
 
 
 ### Visualize
@@ -120,12 +120,10 @@ Requires [gizeh](https://github.com/Zulko/gizeh).
 }
 ```
 
-## TODO 
+## TODO
 
 * Cleaning up
 * Testing
 * More options
 * Better visualization
 * Use new cudnn 3D capabilities
-
-
