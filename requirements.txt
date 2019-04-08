@@ -1,0 +1,4 @@
+scikit-learn
+theano==0.8.2
+Lasagne
+path.py

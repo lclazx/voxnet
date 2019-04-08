@@ -1,10 +1,10 @@
 from .version import __version__
 
-import activations
-import checkpoints
-import init
-import npytar
-import layers
-import metrics_logging
+import voxnet.activations
+import voxnet.checkpoints
+import voxnet.init
+import voxnet.npytar
+import voxnet.layers
+import voxnet.metrics_logging
 
 import data

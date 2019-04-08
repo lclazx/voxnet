@@ -1,5 +1,9 @@
 
-import cStringIO as StringIO
+try:
+    from StringIO import StringIO
+except ImportError:
+    from io import StringIO
+
 import tarfile
 import time
 import zlib
@@ -54,4 +58,3 @@ class NpyTarReader(object):
 
     def close(self):
         self.tfile.close()
-
