@@ -2,3 +2,6 @@
 .*.swp
 .cache
 voxnet.egg-info
+*.zip
+launch.json
+settings.json

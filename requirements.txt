@@ -1,4 +1,4 @@
 scikit-learn
-theano==0.8.2
-Lasagne
+theano==0.9.0
+Lasagne==0.2.dev1
 path.py

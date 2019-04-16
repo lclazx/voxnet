@@ -19,12 +19,12 @@ class NpyTarWriter(object):
 
     def add(self, arr, name):
 
-        sio = StringIO.StringIO()
+        sio = StringIO()
         np.save(sio, arr)
         zbuf = zlib.compress(sio.getvalue())
         sio.close()
 
-        zsio = StringIO.StringIO(zbuf)
+        zsio = StringIO(zbuf)
         tinfo = tarfile.TarInfo('{}{}{}'.format(PREFIX, name, SUFFIX))
         tinfo.size = len(zbuf)
         tinfo.mtime = time.time()
@@ -53,7 +53,7 @@ class NpyTarReader(object):
         name = entry.name[len(PREFIX):-len(SUFFIX)]
         fileobj = self.tfile.extractfile(entry)
         buf = zlib.decompress(fileobj.read())
-        arr = np.load(StringIO.StringIO(buf))
+        arr = np.load(StringIO(buf))
         return arr, name
 
     def close(self):

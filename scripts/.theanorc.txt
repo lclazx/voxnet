@@ -1,0 +1,10 @@
+[global]
+floatX = float32
+device = cuda
+
+[cuda]
+root = C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\bin
+
+[dnn]
+include_path=C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include
+library_path=C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\lib\x64
